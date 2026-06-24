@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;700&display=swap');
+
+:root {
+  --text-dark: rgba(0, 0, 0, 0.62);
+  --text-muted: #555555;
+  --font-main: 'Montserrat', sans-serif;
+}
+
+.basic-footer {
+  background-color: #ffffff;
+  padding: 60px 40px 40px 40px;
+  font-family: var(--font-main);
+  box-sizing: border-box;
+}
+
+.basic-footer * {
+  box-sizing: border-box;
+  font-family: var(--font-main);
+}
+
+.footer-grid {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.footer-secondary-grid {
+  margin-top: 20px;
+}
+
+/* ==========================================================================
+   Columns & Headings
+   ========================================================================== */
+.footer-col h3 {
+  font-size: 20px;
+  font-weight: 400;
+  color: #000000;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--text-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 0.5px;
+}
+
+.footer-col p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  font-weight: 300;
+  margin-top: 20px;
+  margin-bottom: 0;
+  max-width: 340px;
+}
+
+/* ==========================================================================
+   Navigation Links
+   ========================================================================== */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+}
+
+.footer-links li {
+  margin-bottom: 15px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 15px;
+  font-weight: 200;
+  display: block;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Payment Icons
+   ========================================================================== */
+.payment-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 40px;
+  align-items: center;
+}
+
+.payment-icons img {
+  height: 22px;
+  object-fit: contain;
+}
+
+/* ==========================================================================
+   Newsletter Subscription
+   ========================================================================== */
+.newsletter-section {
+  grid-column: 2 / 3;
+  margin-top: 20px;
+}
+
+.newsletter-section h4 {
+  font-size: 18px;
+  font-weight: 300;
+  color: #000000;
+  margin: 0 0 15px 0;
+  letter-spacing: 0.5px;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 320px;
+}
+
+.newsletter-form input {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid var(--text-dark);
+  border-radius: 12px;
+  font-size: 15px;
+  font-family: var(--font-main);
+  font-weight: 400;
+  background-color: #e5e5e5;
+  color: #000000;
+  outline: none;
+}
+
+.newsletter-form button {
+  width: 100%;
+  padding: 16px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: var(--font-main);
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: opacity 0.2s ease;
+}
+
+.newsletter-form button:hover {
+  opacity: 0.9;
+}
+
+.dropdown-icon {
+  display: none;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   Responsive Mobile Adjustments
+   ========================================================================== */
+@media (max-width: 768px) {
+  .basic-footer {
+    padding: 40px 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer-col p {
+    max-width: 100%;
+  }
+
+  .dropdown-icon {
+    display: inline-block;
+  }
+
+  .footer-col.collapsible h3 {
+    cursor: pointer;
+  }
+
+  .footer-col.collapsible .footer-links {
+    display: none;
+    margin-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .footer-col.collapsible.is-open .footer-links {
+    display: block;
+  }
+
+  .payment-icons {
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .newsletter-section {
+    grid-column: 1 / -1;
+    margin-top: 20px;
+  }
+
+  .newsletter-form {
+    max-width: 100%;
+  }
+}

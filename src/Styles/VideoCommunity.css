@@ -1,0 +1,367 @@
+.community-section {
+  padding: 60px 0;
+  background-color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.community-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #111111;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.cards-slider-container {
+  display: flex;
+  gap: 0px;
+  overflow-x: auto;
+  padding: 0;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  cursor: grab;
+  user-select: none;
+}
+
+.cards-slider-container.active-dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+}
+
+.cards-slider-container::-webkit-scrollbar {
+  display: none;
+}
+
+.video-main-card {
+  flex: 0 0 25vw;
+  height: 650px;
+  border-radius: 0px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: none;
+  transition: transform 0.4s ease;
+}
+
+.bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.glass-product-badge {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 10px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.badge-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.badge-info { 
+  flex: 1; 
+  overflow: hidden; 
+}
+
+.badge-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 2px;
+}
+
+.badge-price { 
+  font-size: 11px; 
+  color: #e0e0e0; 
+  font-weight: 500; 
+}
+
+.video-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-main-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phone-wrapper {
+  position: relative;
+  width: 380px;
+  height: 760px;
+  background: #000000;
+  border-radius: 40px;
+  border: 12px solid #222222;
+  box-shadow: 0 25px 65px rgba(0,0,0,0.5);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-video { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+}
+
+.phone-top-controls {
+  position: absolute;
+  top: 25px;
+  width: 100%;
+  padding: 0 25px;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 10;
+}
+
+.control-icon-btn {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255,255,255,0.2);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  color: #fff;
+}
+
+.phone-side-actions {
+  position: absolute;
+  right: 20px;
+  bottom: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  z-index: 10;
+}
+
+.action-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.action-circle-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  color: #fff;
+  transition: transform 0.2s ease;
+}
+
+.action-circle-btn:hover { 
+  transform: scale(1.1); 
+}
+
+.phone-shop-card {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 15px;
+  z-index: 10;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.shop-card-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.shop-img { 
+  width: 50px; 
+  height: 50px; 
+  border-radius: 10px; 
+  object-fit: cover; 
+}
+
+.shop-text-info { 
+  flex: 1; 
+}
+
+.shop-p-title { 
+  font-size: 13px; 
+  font-weight: 600; 
+  color: #ffffff; 
+  margin-bottom: 3px; 
+}
+
+.shop-p-price { 
+  font-size: 12px; 
+  color: #dddddd; 
+  font-weight: 500; 
+}
+
+.shop-now-btn {
+  width: 100%;
+  background: #ffffff;
+  color: #111111;
+  border: none;
+  padding: 10px 0;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.modal-arrow-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 55px;
+  height: 55px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #ffffff;
+  transition: all 0.3s;
+  z-index: 100;
+}
+
+.modal-arrow-nav:hover { 
+  background: #ffffff; 
+  color: #111111; 
+}
+
+.modal-arrow-nav.left-arrow { 
+  left: -80px; 
+}
+
+.modal-arrow-nav.right-arrow { 
+  right: -80px; 
+}
+
+.mobile-arrows-container {
+  display: none;
+}
+
+.modal-close-global {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 32px;
+  cursor: pointer;
+  z-index: 102;
+}
+
+@media (max-width: 1024px) {
+  .video-main-card {
+    flex: 0 0 50vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-main-card {
+    flex: 0 0 85vw;
+    height: 500px;
+  }
+
+  .phone-wrapper {
+    width: 290px;
+    height: 580px;
+    border-width: 8px;
+    border-radius: 32px;
+  }
+  
+  .modal-arrow-nav.left-arrow,
+  .modal-arrow-nav.right-arrow {
+    display: none;
+  }
+
+  .mobile-arrows-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+    width: 100%;
+    z-index: 101;
+  }
+
+  .mobile-arrow-btn {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+  }
+
+  .modal-close-global {
+    top: 20px;
+    right: 25px;
+    font-size: 26px;
+  }
+}

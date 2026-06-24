@@ -1,0 +1,244 @@
+.products-luxury-section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.products-seamless-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0px;
+  row-gap: 0px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.product-luxury-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  background: #ffffff;
+  border: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.product-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.product-luxury-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease;
+}
+
+.product-luxury-img.hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.product-luxury-card:hover .product-luxury-img.main-img {
+  opacity: 0;
+  transform: scale(1.03);
+}
+
+.product-luxury-card:hover .product-luxury-img.hover-img {
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+.luxury-quick-add-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: none;
+  color: #1a1a1a;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  padding: 16px 0;
+  text-align: center;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 3;
+}
+
+.product-luxury-card:hover .luxury-quick-add-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.luxury-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.luxury-badge.sale-style {
+  background-color: #a82c2c;
+}
+
+.product-luxury-info {
+  padding: 24px 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffffff;
+}
+
+.product-luxury-title {
+  font-size: 12px;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.product-luxury-price {
+  font-size: 11px;
+  color: #555555;
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.product-card-colors-row {
+  display: flex;
+  gap: 7px;
+  margin-top: 4px;
+}
+
+.card-color-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+  transition: transform 0.2s;
+  position: relative;
+}
+
+.card-color-dot:hover {
+  transform: scale(1.2);
+}
+
+.card-color-dot.is-active {
+  box-shadow: 0 0 0 1.5px #fff, 0 0 0 2.5px #1a1a1a;
+}
+
+.no-results-luxury {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 12px;
+  color: #999999;
+  letter-spacing: 2px;
+  padding: 100px 0;
+}
+
+.luxury-pagination-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  width: 100%;
+}
+
+.luxury-page-digit {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: #777777;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 4px;
+  position: relative;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.luxury-page-digit:hover {
+  color: #1a1a1a;
+}
+
+.luxury-page-digit.is-active {
+  color: #1a1a1a;
+  font-weight: 400;
+}
+
+.luxury-page-digit.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 4px;
+  right: 4px;
+  height: 1px;
+  background-color: #1a1a1a;
+}
+
+.luxury-next-label {
+  font-size: 13px;
+  font-weight: 300;
+  color: #333333;
+  background: none;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 6px 0;
+  transition: opacity 0.3s;
+}
+
+.luxury-next-label:disabled {
+  color: #cccccc;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .products-seamless-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .luxury-quick-add-btn {
+    opacity: 1;
+    transform: translateY(0);
+    padding: 10px 0;
+    font-size: 9px;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .product-luxury-info {
+    padding: 16px 10px;
+  }
+}

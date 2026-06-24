@@ -1,0 +1,316 @@
+.reviews-section {
+  padding: 80px 0;
+  background-color: #ffffff;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.reviews-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #111111;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Slider Viewport & Layout
+   ========================================================================== */
+.slider-viewport {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Base Card Styling */
+.review-card {
+  position: absolute;
+  width: 440px;
+  background: #ffffff;
+  padding: 40px 35px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06);
+  border-radius: 2px;
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+/* Center Active Card */
+.review-card.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1.05) translateX(0);
+  z-index: 3;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.09);
+}
+
+/* Left Stack Card */
+.review-card.left {
+  opacity: 0.35;
+  visibility: visible;
+  transform: scale(0.85) translateX(-110%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Right Stack Card */
+.review-card.right {
+  opacity: 0.35;
+  visibility: visible;
+  transform: scale(0.85) translateX(110%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.review-card.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.7) translateX(0);
+}
+
+/* ==========================================================================
+   Card Elements Detail
+   ========================================================================== */
+.stars-container {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 15px;
+}
+
+.star-icon {
+  color: #7a7a7a;
+  font-size: 16px;
+}
+
+.reviewer-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 25px;
+}
+
+.reviewer-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  font-style: italic;
+  color: #111111;
+}
+
+.verified-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  background-color: #2ece7a;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.quote-mark {
+  font-family: 'Georgia', serif;
+  font-size: 50px;
+  color: #111111;
+  line-height: 1;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.review-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.5;
+  color: #222222;
+  margin: 0;
+  text-align: left;
+}
+
+/* ==========================================================================
+   Arrows & Fading Overlays
+   ========================================================================== */
+.slider-arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.slider-arrow-btn:hover {
+  background-color: #111111;
+  border-color: #111111;
+}
+
+.slider-arrow-btn:hover svg {
+  fill: #ffffff;
+}
+
+.slider-arrow-btn.prev-btn {
+  left: 40px;
+}
+
+.slider-arrow-btn.next-btn {
+  right: 40px;
+}
+
+.slider-arrow-btn svg {
+  width: 14px;
+  height: 14px;
+  fill: #111111;
+  transition: fill 0.3s ease;
+}
+
+.edge-fade-left, 
+.edge-fade-right {
+  position: absolute;
+  top: 0;
+  width: 15%;
+  height: 100%;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.edge-fade-left {
+  left: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+}
+
+.edge-fade-right {
+  right: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+@media (max-width: 991px) {
+  .review-card {
+    width: 310px;
+    padding: 30px 25px;
+  }
+  
+  .review-text {
+    font-size: 16px;
+  }
+  
+  .slider-viewport {
+    height: 380px;
+  }
+  
+  .review-card.left {
+    transform: scale(0.85) translateX(-105%);
+    opacity: 0.35;
+    visibility: visible;
+  }
+  
+  .review-card.right {
+    transform: scale(0.85) translateX(105%);
+    opacity: 0.35;
+    visibility: visible;
+  }
+  
+  .slider-arrow-btn.prev-btn { left: 15px; }
+  .slider-arrow-btn.next-btn { right: 15px; }
+}
+
+@media (max-width: 576px) {
+  .slider-viewport {
+    height: 340px;
+  }
+  
+  .review-card {
+    width: 215px;
+    padding: 20px 18px;
+  }
+  
+  .review-text {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  
+  .quote-mark {
+    font-size: 32px;
+    margin-bottom: 2px;
+  }
+  
+  .reviewer-info {
+    margin-bottom: 12px;
+  }
+  
+  .reviewer-name {
+    font-size: 11px;
+  }
+  
+  .star-icon {
+    font-size: 11px;
+  }
+  
+  .review-card.left {
+    transform: scale(0.8) translateX(-108%);
+    opacity: 0.25;
+    visibility: visible;
+  }
+  
+  .review-card.right {
+    transform: scale(0.8) translateX(108%);
+    opacity: 0.25;
+    visibility: visible;
+  }
+  
+  .review-card.active {
+    transform: scale(1.02) translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .slider-arrow-btn {
+    width: 34px;
+    height: 34px;
+  }
+  
+  .slider-arrow-btn svg {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .slider-arrow-btn.prev-btn { left: 5px; }
+  .slider-arrow-btn.next-btn { right: 5px; }
+  
+  .edge-fade-left, 
+  .edge-fade-right {
+    width: 10%;
+  }
+}
