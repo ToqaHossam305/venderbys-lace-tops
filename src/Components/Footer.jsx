@@ -19,7 +19,7 @@ const Footer = () => {
         <div className="footer-col">
           <h3>About Us</h3>
           <p>
-            At Basic Couture, we craft everyday essentials that blend comfort with a couture edge.
+            At Venderby's LaceTops, we craft everyday essentials that blend comfort with a couture edge.
             Made from premium Egyptian fabrics, our pieces sculpt, flatter and move with you -
             timeless designs made for everybody, every day.
           </p>
