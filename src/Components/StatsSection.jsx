@@ -137,7 +137,9 @@ export default function StatsSection() {
           text-transform: uppercase;
         }
 
-        /* تحسين الريسبونسيف للموبايل ليبقى بالعرض تماماً كالديسكتوب */
+       /* Improved mobile responsiveness to match the desktop layout */
+
+
         @media (max-width: 768px) {
           .stats-container { 
             padding: 40px 3%; 
